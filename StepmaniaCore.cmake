@@ -369,6 +369,13 @@ elseif(LINUX)
     set(HAS_XRANDR FALSE)
   endif()
 
+  find_package(Xtst REQUIRED)
+  if (${XTST_FOUND})
+    set(HAS_LIBXTST TRUE)
+  else()
+    set(HAS_LIBXTST FALSE)
+  endif()
+
   find_package(Xinerama)
   if (${XINERAMA_FOUND})
     set(HAS_XINERAMA TRUE)
